@@ -57,7 +57,8 @@ render(){
     font: 'inherit',
     border: '1px solid pink',
     padding: '8px',
-    cursor: 'pointer'
+    cursor: 'pointer',
+    backgroundColor: '#E9D6CF'
   };
 
   let persons = null;
@@ -76,7 +77,7 @@ render(){
   </div>
 
     );
-
+   stylebtn.backgroundColor= '#E9E2E0';
   }
     return (
       <div className="App">
