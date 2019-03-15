@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Person from './Person/Person';
 import './Person/Person.css';
+import Radium from 'radium';
 
 class App extends Component {
  state = {
@@ -58,7 +59,11 @@ render(){
     border: '1px solid pink',
     padding: '8px',
     cursor: 'pointer',
-    backgroundColor: '#E9D6CF'
+    backgroundColor: '#E9D6CF',
+    ':hover':{
+      backgroundColor: '#CCA59A',
+      color:'black'
+    }
   };
 
   let persons = null;
@@ -78,11 +83,24 @@ render(){
 
     );
    stylebtn.backgroundColor= '#E9E2E0';
+   stylebtn[':hover'] = {
+     backgroundColor: '#CCA59A',
+     color:'black'
+   }
   }
+
+  let classes = [];
+  if (this.state.persons.length <= 2){
+    classes.push('red');
+  }
+  if (this.state.persons.length <= 1){
+    classes.push('bold');
+  }
+
     return (
       <div className="App">
         <h1>Hello World</h1>
-        <p>It's me, React App</p>
+        <p className={classes.join(' ')}>It's me, React App</p>
         <button
         style={stylebtn}
          onClick={this.togglePersonsHandler}>Toggle Persons</button>
@@ -95,4 +113,4 @@ render(){
   }
 }
 
-export default App;
+export default  Radium(App);
