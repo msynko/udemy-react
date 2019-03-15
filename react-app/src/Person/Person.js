@@ -1,8 +1,8 @@
 import React from 'react';
 import Radium from 'radium';
 
-
 const person  = (props) => {
+
    return (
      <div className='Person'>
       <p onClick={props.click}> I'm  {props.name} and I'm {props.age}! </p>
@@ -13,4 +13,4 @@ const person  = (props) => {
 };
 
 
-export default Radium(person);
+export default person;
